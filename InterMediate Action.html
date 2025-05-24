@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InterMediate Action</title>
+  <style>
+    :root {
+      --bg: #f4f4f4;
+      --text: #333;
+      --section-bg: white;
+      --primary: #0077cc;
+      --nav-bg: #005fa3;
+      --footer-bg: #222;
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #eee;
+      --section-bg: #1e1e1e;
+      --primary: #3399ff;
+      --nav-bg: #1c1c1c;
+      --footer-bg: #000;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a, nav button {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+      background: var(--section-bg);
+      margin-top: 20px;
+      border-radius: 8px;
+      transition: background 0.4s ease-in-out, transform 0.4s ease-in-out;
+    }
+
+    section:hover {
+      opacity: 0.95;
+      transform: translateY(-5px);
+    }
+
+    .partner-list {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .partner {
+      flex: 1 1 200px;
+      padding: 10px;
+      background: var(--bg);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    footer {
+      background: var(--footer-bg);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>InterMediate Action</h1>
+    <p>Professional services done right</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#partners">Partners</a>
+    <a href="#contact">Contact</a>
+    <button onclick="toggleMode()">🌓 Mode</button>
+  </nav>
+
+  <section id="home">
+    <h2>Welcome to Our Website</h2>
+    <p>We provide top-tier solutions tailored to your business needs.</p>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Founded in 2025, we have been committed to delivering quality and value in every project.</p>
+  </section>
+
+  <section id="services">
+    <h2>Our Services</h2>
+    <ul>
+      <li>Consulting</li>
+      <li>Web Development</li>
+      <li>Marketing Solutions</li>
+    </ul>
+  </section>
+
+  <section id="partners">
+    <h2>Our Partners</h2>
+    <div class="partner-list">
+      <div class="partner"></div>
+      <div class="partner"></div>
+      <div class="partner"></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: liarafaasen3.0@gmail.com</p>
+    <p>Phone: 0494196533</p>
+    <p><a href="https://discord.gg/https://discord.gg/vPTAQHaaDN" target="_blank">Join Our Discord!</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 InterMediate Action. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle("dark");
+      localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
+    }
+
+    // Set theme from previous visit
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+    }
+  </script>
+
+</body>
+</html>
